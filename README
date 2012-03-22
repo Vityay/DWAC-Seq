@@ -1,1 +1,28 @@
-Readme for dwac-seq tool
+DWAC-seq (ver. 0.56)
+
+Dynamic Window Approach for CNV detection using sequencing tag density
+
+Prerequisites:
+
+-- samtools installed in a folder which is in the PATH variable.
+
+
+Usage:
+
+You need to aligned .bam files which are indexed (.bam.bai)
+
+Command line:
+
+dwac-seq.pl --test test_bam --ref ref_bam --chr chromosome_name
+  (optional: --amb ambiguity --scale --no_fine_tuning)
+
+It is not adviseable to specify optional parameters unless you know what you are doing)
+
+
+The output will contain 4 files:
+	- file with name ending with a chromosome name will contain the predicted copy number of regions
+of the chromosome;
+	- file with name ending with 'windows' contains the number of reads in test sequence for every window.
+It can be subject for visualization (https://fedor21.hubrecht.eu/slavik/hilbert/).
+	
+
